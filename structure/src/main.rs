@@ -72,7 +72,13 @@ fn main() {
     {
         let s1 = String::from("hello");
 
-        let len = calculate_length(&s1);
+        // These ampersands '&' represent references, and they allow you to refer to some value without taking ownership of it.
+        // The &s1 syntax lets us create a reference that refers to the value of s1 but does not own it. 
+        // Because the reference does not own it, the value it points to will not be dropped when the reference stops being used.
+
+        // Just as variables are immutable by default, so are references. We’re not allowed to modify something we have a reference to.
+        // Then we create a mutable reference with &mut s
+        let len = calculate_length(&s1); 
 
         println!("The length of '{s1}' is {len}.");
     }
